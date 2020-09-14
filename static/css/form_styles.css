@@ -1,32 +1,102 @@
+
 #ticket_form {
-    font-family: Verdana, Helvetica, sans-serif;
-    font-size: 10pt;
-    color: dimgray;
-    width: 240px;
-    border: 1px solid lightgray;
-    padding: 0 8px;
+    font-family: 'Quicksand', sans-serif;
+    color: #000;
+    width: 100%;
+    max-width: 1400px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+#ticket_form form {
+    display: none;
+}
+#ticket_form #form_shower {
+    display: block;
+}
+#ticket_form form.active {
+    display: block;
+}
+#ticket_form #form_shower select {
+    height: 65px;
+    width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("/img/down-arrow.png") no-repeat right 20px center;
+}
+#form_options {
+    padding: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
 }
 
-.title {
-    font-family: Arial, Helvetica, sans-serif;
+#ticket_form .title, #ticket_form label {
+    text-transform: uppercase;
+    font-size: 30px;
     font-weight: bold;
-    padding: 12px 0 0;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-form ul {
+#ticket_form form ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-form li {
+#ticket_form form li {
     margin: 0 0 6px 0;
 }
 
-textarea {
+#ticket_form textarea {
     vertical-align: top;
-    border-color: lightgray;
 }
 
-.field {
+#ticket_form .field {
     width: 100%;
+    border: 1px solid #ddd;
+    color: #000;
+    min-height: 65px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+#ticket_form .field:focus {
+    background-color: #efefef;
+    border-color: #cccccc;
+}
+
+#ticket_form input[type="submit"] {
+    font-size: 2.1875rem;
+    padding: 7px 36px;
+    background: none;
+    border: 6px solid #000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    float: right;
+}
+
+#ticket_form input[type="submit"]:hover {
+    border: 6px solid #00a8f7;
+    color: #00a8f7;
+    cursor: pointer;
+}
+
+#ticket_form .feedback {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 8px 0 0;
+}
+#ticket_form .form_validation_success {
+    color: #43ac6a;
+}
+#ticket_form .form_validation_error {
+    color: #b12323;
+}
+#ticket_form .required_asterisk {
+    color: #b12323;
 }
