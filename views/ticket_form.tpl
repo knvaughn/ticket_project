@@ -20,7 +20,7 @@
 <!--SERVICE ISSUE FORM-->
 <form id="service_issue" action="create_ticket" method="post">
   <ul>
-    <li><label for="subject">Ticket Subject<span class="required_asterisk">*</span></label><input type="text" name="subject" class="field" required></li>
+    <li><input type="hidden" name="subject" value="Service Issue"></li>
 
     <li><label for="account_holder">Account Holder Full Name<span class="required_asterisk">*</span></label><input type="text" name="account_holder" class="field" required></li>
 

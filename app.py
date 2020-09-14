@@ -11,12 +11,20 @@ def handle_form():
     if request.POST:
 
         # Determine which form was submitted
-        
+
 
         # Get the form data
-        subject = request.forms.get('subject')
-        description = request.forms.get('description')
+        account_holder = request.forms.get('account_holder')
+        service_address = request.forms.get('service_address')
+        unit_number = request.forms.get('unit_number')
         email = request.forms.get('email')
+        description = request.forms.get('description')
+        
+        subject = request.forms.get('subject')
+
+        subject += account_holder
+        
+        
         # Package the data for the API using a Python dictionary, then convert it to JSON
         data = {'request': {'subject': subject, 'comment': {'body': description}}}
 
