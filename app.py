@@ -13,8 +13,10 @@ def handle_form():
         account_holder = request.forms.get('account_holder')
         service_address = request.forms.get('service_address')
         unit_number = request.forms.get('unit_number')
+        phone_number = request.forms.get('phone_number')
         email = request.forms.get('email')
         description = request.forms.get('description')
+        final_service_date = request.forms.get('final_service_date')
         subject = request.forms.get('subject')
         # Format unit number
         if unit_number:
@@ -24,6 +26,13 @@ def handle_form():
             # Format the subject and description
             subject += ' - ' + account_holder
             description += '\n\n' + account_holder + '\n' + service_address
+            # Package the data for the API using a Python dictionary
+            data = {'request': {'subject': subject, 'comment': {'body': description}}}
+        elif subject == 'Cancel Service':
+            # Format the subject and description
+            description = ''
+            subject += ' - ' + account_holder
+            description += '\n\n' + account_holder + '\n' + service_address + '\n' + phone_number + '\n' + 'Final Service Date: ' + final_service_date
             # Package the data for the API using a Python dictionary
             data = {'request': {'subject': subject, 'comment': {'body': description}}}
         

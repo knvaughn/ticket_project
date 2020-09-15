@@ -43,13 +43,15 @@
 
     <li><label for="account_holder">Account Holder Full Name<span class="required_asterisk">*</span></label><input type="text" name="account_holder" class="field" required></li>
 
+    <li><label for="phone_number">Account Holder Phone<span class="required_asterisk">*</span></label><input type="tel" name="phone_number" class="field" required></li>
+
     <li><label for="service_address">Service Address<span class="required_asterisk">*</span></label><input type="text" name="service_address" class="field" required></li>
 
     <li><label for="unit_number">Apt. # / Unit</label><input type="text" name="unit_number" class="field"></li>
 
     <li><label for="email">Email<span class="required_asterisk">*</span></label><input type="email" name="email" class="field" required></li>
 
-    <li><label for="description">Tell Us How We Can Help<span class="required_asterisk">*</span></label><textarea name="description" rows="6" class="field" required></textarea></li>
+    <li><label for="final_service_date">Final Service Date<span class="required_asterisk">*</span></label><input type="date" name="final_service_date" class="field" required></li>
 
     <li><input type="submit" value="Submit"></li> 
   </ul>
