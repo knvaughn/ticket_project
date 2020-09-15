@@ -9,25 +9,25 @@ def handle_form():
     status = ''
     validation = False
     if request.POST:
-
-        # Determine which form was submitted
-
-
         # Get the form data
         account_holder = request.forms.get('account_holder')
         service_address = request.forms.get('service_address')
         unit_number = request.forms.get('unit_number')
         email = request.forms.get('email')
         description = request.forms.get('description')
-        
         subject = request.forms.get('subject')
-
-        subject += account_holder
+        # Format unit number
+        if unit_number:
+            service_address += ' #: ' + unit_number
+        # Determine which form was submitted
+        if subject == 'Service Issue':
+            # Format the subject and description
+            subject += ' - ' + account_holder
+            description += '\n\n' + account_holder + '\n' + service_address
+            # Package the data for the API using a Python dictionary
+            data = {'request': {'subject': subject, 'comment': {'body': description}}}
         
-        
-        # Package the data for the API using a Python dictionary, then convert it to JSON
-        data = {'request': {'subject': subject, 'comment': {'body': description}}}
-
+        # Convert data to JSON
         ticket = json.dumps(data)
         # Make the API request
         user = email + '/token'
