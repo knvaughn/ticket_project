@@ -39,15 +39,18 @@
 <!--CANCEL SERVICE FORM-->
 <form id="cancel_service" action="create_ticket" method="post">
   <ul>
-    <li><input type="text" placeholder="ticket subject for cancelling service" 
-      name="subject" class="field" required></li>
-  
-    <li><textarea placeholder="what's the problem?" 
-      name="description" rows="6" class="field" required></textarea></li>
-  
-    <li><input type="email" placeholder="your email address" 
-      name="email" class="field" required></li>
-  
+    <li><input type="hidden" name="subject" value="Cancel Service"></li>
+
+    <li><label for="account_holder">Account Holder Full Name<span class="required_asterisk">*</span></label><input type="text" name="account_holder" class="field" required></li>
+
+    <li><label for="service_address">Service Address<span class="required_asterisk">*</span></label><input type="text" name="service_address" class="field" required></li>
+
+    <li><label for="unit_number">Apt. # / Unit</label><input type="text" name="unit_number" class="field"></li>
+
+    <li><label for="email">Email<span class="required_asterisk">*</span></label><input type="email" name="email" class="field" required></li>
+
+    <li><label for="description">Tell Us How We Can Help<span class="required_asterisk">*</span></label><textarea name="description" rows="6" class="field" required></textarea></li>
+
     <li><input type="submit" value="Submit"></li> 
   </ul>
 </form>
