@@ -1,6 +1,5 @@
 from bottle import route, template, run, TEMPLATE_PATH, static_file, request
-import json
-import requests
+import json, requests
 
 TEMPLATE_PATH.insert(0, 'views')
 
