@@ -40,8 +40,8 @@ def handle_form():
         ticket = json.dumps(data)
         # Make the API request
         user = email + '/token'
-        api_token = 'goN6RPMt0DbCkHM0ZL2YX9qL30eCpAUexQuIcC7A'
-        url = 'https://rocketfiber.zendesk.com/api/v2/requests.json'
+        api_token = ''
+        url = ''
         headers = {'content-type': 'application/json'}
         # Response variable r
         r = requests.post(
